@@ -7,13 +7,13 @@ private:
     float peso;
 
 public:
-    Perro(string nombre, string raza, float peso) {
-        this->nombre = nombre;
+    Perro(string nombre, string raza, float peso) { // Constructor con nombre, raza y peso
+        this->nombre = nombre; // Con punteros, se ingresan a los elementos privados desde el public.
         this->raza = raza;
         this->peso = peso;
     }
 
-    void ingresarPerro() {
+    void ingresarPerro() { // Funcion para ingresar un perro
         cout << " " << endl;
         cout << "Ingrese el nombre del perro: ";
         cin >> nombre;
@@ -23,7 +23,7 @@ public:
         cin >> peso;
     }
 
-    void mostrarPerro(int numero) {
+    void mostrarPerro(int numero) { // Funcionar para mostrar un perro, que recibe un numero int para enumerarlos.
         cout << " " << endl;
         cout << "Datos del perro " << numero << ":" << endl;
         cout << "Nombre: " << nombre << endl;
@@ -31,7 +31,7 @@ public:
         cout << "Peso: " << peso << " kg" << endl;
     }
 
-    string evaluarPeso() {
+    string evaluarPeso() { // Funcion string que retorna si el perro está bajo peso, peso normal, o sobrepeso dependiendo de la raza
         if (raza == "Pequena") {
             if (peso < 5.0) return "Bajo peso para raza pequena.";
             else if (peso > 25.0) return "Sobrepeso para raza pequena.";
@@ -55,16 +55,16 @@ int main() {
 
     int cantidadPerros;
     cout << "¿Cuántos perros quieres ingresar?: ";
-    cin >> cantidadPerros;
+    cin >> cantidadPerros; // Se ingresa la cantidad de perros
 
-    Perro* perros[cantidadPerros];
+    Perro* perros[cantidadPerros]; // Se ingresan multiples objetos con un arreglo
 
-    for (int i = 0; i < cantidadPerros; ++i) {
+    for (int i = 0; i < cantidadPerros; ++i) { // Ciclo que ingresa los perros dependiendo de la cantidad de perros ingresada por el usuario
         perros[i] = new Perro("", "", 0.0); 
         perros[i]->ingresarPerro();
     }
 
-    for (int i = 0; i < cantidadPerros; ++i) {
+    for (int i = 0; i < cantidadPerros; ++i) { // Ciclo que muestra los perros y evalua su peso con la función
         perros[i]->mostrarPerro(i + 1);
         cout << perros[i]->evaluarPeso() << endl;
     }
