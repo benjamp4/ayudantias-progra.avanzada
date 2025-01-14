@@ -8,6 +8,7 @@ private:
 
 public:
     Perro(string nombre, string raza, float peso) { // Constructor con nombre, raza y peso
+
         this->nombre = nombre; // Con punteros, se ingresan a los elementos privados desde el public.
         this->raza = raza;
         this->peso = peso;
@@ -58,7 +59,6 @@ int main() {
     cin >> cantidadPerros; // Se ingresa la cantidad de perros
 
     Perro* perros[cantidadPerros]; // Se ingresan multiples objetos con un arreglo
-
     for (int i = 0; i < cantidadPerros; ++i) { // Ciclo que ingresa los perros dependiendo de la cantidad de perros ingresada por el usuario
         perros[i] = new Perro("", "", 0.0); 
         perros[i]->ingresarPerro();

@@ -30,8 +30,9 @@ private:
     int cantidadProductos;   // Número actual de productos en el carrito
 
 public:
-    CarritoDeCompras() : cantidadProductos(0) {} // Inicializa la cantidad de productos a 0
-
+    CarritoDeCompras() {
+        this->cantidadProductos = 0;  // Inicialización usando 'this'
+    }
     // La función recibe un objeto Producto llamado 'item'
 
     void agregarProducto(Producto item) { 
