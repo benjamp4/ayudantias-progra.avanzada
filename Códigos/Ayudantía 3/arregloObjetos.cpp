@@ -49,13 +49,6 @@ public:
             }
         }
     }
-
-    // Destructor para liberar memoria
-    ~Grupo() {
-        for (int i = 0; i < 3; i++) {
-            delete personas[i];
-        }
-    }
 };
 
 int main() {
@@ -71,9 +64,6 @@ int main() {
 
     // Mostrar las personas del grupo
     grupo->mostrarPersonas();
-
-    // Liberar memoria del grupo
-    delete grupo;
 
     return 0;
 }
